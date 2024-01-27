@@ -41,7 +41,7 @@ vec3 nlLighting(vec3 wPos, out vec3 torchColor, vec3 COLOR, vec3 FOG_COLOR, floa
   float torchAttenuation = (NL_TORCH_INTENSITY*uv1.x)/(0.5-0.45*lit.x);
 
 #ifdef NL_BLINKING_TORCH
-  torch_attenuation *= 1.0 - 0.19*noise1D(t*8.0);
+  torchAttenuation *= 1.0 - 0.19*noise1D(t*8.0);
 #endif
 
   vec3 torchLight = torchColor*torchAttenuation;
